@@ -41,6 +41,9 @@ const AddList = ({ colors, onAdd }) => {
         onAdd(listObj);
         onClose();
       })
+      .catch(() => {
+        alert('Ошибка при добавлении списка');
+      })
       .finally(() => {
         setIsLoading(false);
       });
@@ -105,7 +108,7 @@ const AddList = ({ colors, onAdd }) => {
               />
             ))}
           </div>
-          <button onClick={addList} className="button">
+          <button disabled={isLoading} onClick={addList} className="button">
             {isLoading ? 'Добавление...' : 'Добавить'}
           </button>
           {/* Нужно задизейблить кнопку при загрузке, чтобы нельзя было повторно отправлять запрос при нажатии */}

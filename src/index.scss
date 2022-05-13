@@ -15,6 +15,9 @@ border: 0;
 cursor: pointer;
 color: #FFFFFF;
 padding: 10px 20px;
+font-size: 14px;
+
+
 
 &:hover {
   background: darken(#4DD599, 7%);
@@ -22,6 +25,24 @@ padding: 10px 20px;
 
 &:active {
   background: darken(#4DD599, 10%);
+}
+
+&:disabled {
+  background: #d8d8d8;
+  cursor: default;
+}
+
+&--grey {
+  background: #F4F6F8;
+  color: #444444;
+
+  &:hover {
+    background: darken(#F4F6F8, 3%);
+  }
+
+  &:active {
+    background: darken(#F4F6F8, 6%);
+  }
 }
 }
 
@@ -55,8 +76,11 @@ padding: 10px 20px;
 .field {
 background: #FFFFFF;
 border: 1px solid #EFEFEF;
+box-sizing: border-box;
 border-radius: 4px;
 padding: 8px 12px;
+width: 100%;
+font-size: 14px;
 
 &:focus {
   border-color: #dbdbdb;
