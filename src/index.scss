@@ -58,6 +58,7 @@ font-size: 14px;
   border-radius: 10px;
   border: 1px solid #f1f1f1;
   font-size: 14px;
+  
 
   &__sidebar {
     background-color: #f4f6f8;
@@ -70,6 +71,7 @@ font-size: 14px;
   &__tasks {
     flex: 1;
     padding: 60px;
+    overflow: auto;
   }
 }
 

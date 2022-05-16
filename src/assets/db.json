@@ -31,19 +31,9 @@
       "id": 7
     },
     {
-      "name": "Выучить React",
-      "colorId": 4,
-      "id": 8
-    },
-    {
-      "name": "Поправить верстку ширину и высоту",
-      "colorId": 8,
-      "id": 9
-    },
-    {
-      "name": "Бляха муха, работает! ахахахахах го го го",
+      "name": "123123",
       "colorId": 3,
-      "id": 10
+      "id": 8
     }
   ],
   "tasks": [
@@ -73,14 +63,8 @@
     },
     {
       "listId": 1,
-      "text": "test",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "listId": 1,
-      "text": "qweqwe",
-      "completed": false,
+      "text": "qweqwe234",
+      "completed": true,
       "id": 7
     },
     {
@@ -136,12 +120,6 @@
       "text": "Купить книжку",
       "completed": false,
       "id": 20
-    },
-    {
-      "listId": 10,
-      "text": "21123123",
-      "completed": false,
-      "id": 21
     },
     {
       "listId": 1,
