@@ -10,7 +10,6 @@ function App() {
   const [activeItem, setActiveItem] = useState(null);
 
   let navigate = useNavigate();
-
   let location = useLocation();
 
   useEffect(() => {
@@ -116,8 +115,8 @@ function App() {
     <div className="todo">
       <div className="todo__sidebar">
         <List
-          onClickItem={(list) => {
-            navigate('../', { replace: true });
+          onClickItem={() => {
+            navigate('/');
           }}
           items={[
             {
@@ -166,8 +165,8 @@ function App() {
               lists.map((list) => (
                 <Tasks
                   key={list.id}
-                  onAddTask={onAddTask}
                   list={list}
+                  onAddTask={onAddTask}
                   onEditTitle={onEditListTitle}
                   onRemoveTask={onRemoveTask}
                   onEditTask={onEditTask}
@@ -183,8 +182,8 @@ function App() {
               lists &&
               activeItem && (
                 <Tasks
-                  onAddTask={onAddTask}
                   list={activeItem}
+                  onAddTask={onAddTask}
                   onEditTitle={onEditListTitle}
                   onRemoveTask={onRemoveTask}
                   onEditTask={onEditTask}
