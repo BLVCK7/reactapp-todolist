@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 import './List.scss';
 
@@ -9,10 +10,13 @@ import Badge from '../Badge';
 import removeSVG from '../../assets/img/remove.svg';
 
 const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }) => {
+  let navigate = useNavigate();
+
   const removeList = (item) => {
     if (window.confirm('Действительно хотите удалить?')) {
       axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
         onRemove(item.id);
+        navigate('/');
       });
     }
   };

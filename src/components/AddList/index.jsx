@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import './AddList.scss';
 
@@ -13,6 +14,24 @@ const AddList = ({ colors, onAdd }) => {
   const [selectedColor, selectColor] = useState(3);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  let navigate = useNavigate();
+
+  // let lasElem = list[list.length - 1];
+
+  // let location = useLocation();
+
+  // console.log(location.pathname);
+
+  // useEffect(() => {
+  //   const listId = location.pathname.split('lists/')[1];
+  //   if (list) {
+  //     const newListId = list.find((item) => item.id === Number(listId));
+  //     setNewActiveItem(newListId);
+  //   }
+  // }, [list, location.pathname]);
+
+  // const linkId = list.find(item => )
 
   useEffect(() => {
     if (Array.isArray(colors)) {
@@ -31,7 +50,6 @@ const AddList = ({ colors, onAdd }) => {
       alert('Введите название папки');
       return;
     }
-
     setIsLoading(true);
     axios
       .post('http://localhost:3001/lists', { name: inputValue, colorId: selectedColor })
@@ -40,6 +58,7 @@ const AddList = ({ colors, onAdd }) => {
         const listObj = { ...data, color, tasks: [] };
         onAdd(listObj);
         onClose();
+        navigate(`/lists/${data.id}`);
       })
       .catch(() => {
         alert('Ошибка при добавлении списка');

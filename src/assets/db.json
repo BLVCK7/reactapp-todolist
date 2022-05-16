@@ -43,7 +43,7 @@
     {
       "listId": 2,
       "text": "Доработать роутинг",
-      "completed": false,
+      "completed": true,
       "id": 4
     },
     {
